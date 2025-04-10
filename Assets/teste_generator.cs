@@ -15,8 +15,8 @@ public class teste_generator : MonoBehaviour
 
     private int catsAtuais = 0;
 
-    public Vector2 areaMin = new Vector2(-9, -4.5f);
-    public Vector2 areaMax = new Vector2(9, 4.5f);
+    public Vector2 areaMin = new Vector2(-8.7f, -4.5f);
+    public Vector2 areaMax = new Vector2(8.7f, 4.5f);
 
     private int queijosAtuais = 0;
 
@@ -139,6 +139,15 @@ public class teste_generator : MonoBehaviour
         }
         catsAtuais++;
 
+    }
+
+   public void EstragarQueijo()
+    {
+        queijosAtuais--;
+        if (queijosAtuais < 0)
+        {
+            queijosAtuais = 0;
+        }
     }
 
     public void DecrementarQueijo()

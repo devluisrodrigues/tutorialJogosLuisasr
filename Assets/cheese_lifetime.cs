@@ -28,7 +28,7 @@ public class cheese_lifetime : MonoBehaviour
         if (tempoDecorrido >= tempoDeVida)
         {
             Destroy(gameObject);
-            cheeseGenerator.DecrementarQueijo();
+            cheeseGenerator.EstragarQueijo();
         }
     }
 }
