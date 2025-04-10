@@ -1,6 +1,6 @@
 # Mouz Runner
 
-Para o desenvolvimento desse projeto, foram gerados Assets utilizando inteligência artificial.
+Para o desenvolvimento desse projeto, foram gerados Assets utilizando inteligência artificial, ChatGPT 4.0.
 
 Ademais, para a trilha sonora e efeitos sonoros, foram utilizadas as seguintes fontes
 
