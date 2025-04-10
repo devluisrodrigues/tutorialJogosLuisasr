@@ -3,11 +3,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed = 5.0f;
+    public float speed = 8.0f;
+
+    public bool InimigoEncostou = false;
 
     public teste_generator cheeseGenerator;
 
-    private bool facingRight = true; // Variável para rastrear a direção
+    private bool facingRight = true; 
     new AudioSource audio;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,6 +47,11 @@ public class PlayerMovement : MonoBehaviour
             cheeseGenerator.DecrementarQueijo();
             GameController.collect();
         }
+        if (other.tag == "Inimigo")
+        {
+            GameController.encostouInimigo();
+            
+        }
     }
 
     void Flip()
@@ -59,21 +66,20 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 newScale = transform.localScale;
 
-        // Definição das direções baseadas nos inputs
         if (x > 0) // Direita
         {
             newScale.x = Mathf.Abs(newScale.x);
         }
-        else if (x < 0) // Esquerda (espelha no eixo X)
+        else if (x < 0) 
         {
             newScale.x = -Mathf.Abs(newScale.x);
         }
 
-        if (y > 0) // Para cima (espelha no eixo Y)
+        if (y > 0) 
         {
             newScale.y = -Mathf.Abs(newScale.y);
         }
-        else if (y < 0) // Para baixo (normaliza o Y)
+        else if (y < 0)
         {
             newScale.y = Mathf.Abs(newScale.y);
         }
